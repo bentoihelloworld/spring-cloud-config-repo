@@ -1,0 +1,15 @@
+endpoints.health.enabled: true
+
+ribbon:
+  serverListRefreshInterval: 1000
+  ConnectTimeout: 3000
+  ReadTimeout: 3000
+  SocketTimeout: 3000
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    vaadin-application:
+      path: /**
+      serviceId: vaadin
+      sensitiveHeaders:
